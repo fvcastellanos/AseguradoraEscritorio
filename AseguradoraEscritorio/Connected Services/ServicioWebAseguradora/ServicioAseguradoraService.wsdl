@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://sw.dw.umg.edu/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ServicioAseguradoraService" targetNamespace="http://sw.dw.umg.edu/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://sw.dw.umg.edu/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="actualizarPoliza" type="tns:actualizarPoliza" />
+      <xs:element name="actualizarPolizaResponse" type="tns:actualizarPolizaResponse" />
+      <xs:element name="agregarProveedor" type="tns:agregarProveedor" />
+      <xs:element name="agregarProveedorResponse" type="tns:agregarProveedorResponse" />
+      <xs:element name="crearPoliza" type="tns:crearPoliza" />
+      <xs:element name="crearPolizaResponse" type="tns:crearPolizaResponse" />
+      <xs:element name="modificarProveedor" type="tns:modificarProveedor" />
+      <xs:element name="modificarProveedorResponse" type="tns:modificarProveedorResponse" />
+      <xs:element name="obtenerBoletasPoliza" type="tns:obtenerBoletasPoliza" />
+      <xs:element name="obtenerBoletasPolizaResponse" type="tns:obtenerBoletasPolizaResponse" />
+      <xs:element name="obtenerPoliza" type="tns:obtenerPoliza" />
+      <xs:element name="obtenerPolizaResponse" type="tns:obtenerPolizaResponse" />
+      <xs:element name="obtenerPolizas" type="tns:obtenerPolizas" />
+      <xs:element name="obtenerPolizasResponse" type="tns:obtenerPolizasResponse" />
+      <xs:element name="obtenerProveedor" type="tns:obtenerProveedor" />
+      <xs:element name="obtenerProveedorResponse" type="tns:obtenerProveedorResponse" />
+      <xs:element name="obtenerProveedores" type="tns:obtenerProveedores" />
+      <xs:element name="obtenerProveedoresResponse" type="tns:obtenerProveedoresResponse" />
+      <xs:element name="pagarBoleta" type="tns:pagarBoleta" />
+      <xs:element name="pagarBoletaResponse" type="tns:pagarBoletaResponse" />
+      <xs:complexType name="obtenerPoliza">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerPolizaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaPoliza" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaPoliza">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="poliza" type="tns:poliza" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="respuestaBase" abstract="true">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="estado" type="xs:string" />
+          <xs:element minOccurs="0" name="mensaje" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="poliza">
+        <xs:sequence>
+          <xs:element name="activa" type="xs:int" />
+          <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaEmision" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="fechaNacimiento" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="fechaVencimiento" type="xs:dateTime" />
+          <xs:element name="id" type="xs:int" />
+          <xs:element name="monto" type="xs:double" />
+          <xs:element name="noPagos" type="xs:int" />
+          <xs:element minOccurs="0" name="noPoliza" type="xs:string" />
+          <xs:element minOccurs="0" name="nombres" type="xs:string" />
+          <xs:element minOccurs="0" name="telefono" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerPolizas">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="obtenerPolizasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaListadoPolizas" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaListadoPolizas">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="polizas" nillable="true" type="tns:poliza" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="modificarProveedor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:proveedor" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="proveedor">
+        <xs:sequence>
+          <xs:element name="id" type="xs:int" />
+          <xs:element minOccurs="0" name="nit" type="xs:string" />
+          <xs:element minOccurs="0" name="nombre" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="modificarProveedorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaProveedor" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaProveedor">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="proveedor" type="tns:proveedor" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="pagarBoleta">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element name="arg1" type="xs:int" />
+          <xs:element name="arg2" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pagarBoletaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaBoleta" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaBoleta">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="boleta" type="tns:boleta" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="boleta">
+        <xs:sequence>
+          <xs:element name="anio" type="xs:int" />
+          <xs:element minOccurs="0" name="codigo" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaPago" type="xs:dateTime" />
+          <xs:element name="id" type="xs:int" />
+          <xs:element name="mes" type="xs:int" />
+          <xs:element minOccurs="0" name="pagada" type="xs:string" />
+          <xs:element minOccurs="0" name="poliza" type="tns:poliza" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crearPoliza">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:poliza" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crearPolizaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaPoliza" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerProveedor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerProveedorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaProveedor" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerBoletasPoliza">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerBoletasPolizaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaListadoBoletas" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaListadoBoletas">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="boletas" nillable="true" type="tns:boleta" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="agregarProveedor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:proveedor" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="agregarProveedorResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaProveedor" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="actualizarPoliza">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:poliza" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="actualizarPolizaResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaPoliza" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="obtenerProveedores">
+        <xs:sequence />
+      </xs:complexType>
+      <xs:complexType name="obtenerProveedoresResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:respuestaListadoProveedores" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="respuestaListadoProveedores">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:respuestaBase">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="proveedores" nillable="true" type="tns:proveedor" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="obtenerProveedoresResponse">
+    <wsdl:part name="parameters" element="tns:obtenerProveedoresResponse" />
+  </wsdl:message>
+  <wsdl:message name="modificarProveedor">
+    <wsdl:part name="parameters" element="tns:modificarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="pagarBoleta">
+    <wsdl:part name="parameters" element="tns:pagarBoleta" />
+  </wsdl:message>
+  <wsdl:message name="pagarBoletaResponse">
+    <wsdl:part name="parameters" element="tns:pagarBoletaResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerProveedor">
+    <wsdl:part name="parameters" element="tns:obtenerProveedor" />
+  </wsdl:message>
+  <wsdl:message name="actualizarPolizaResponse">
+    <wsdl:part name="parameters" element="tns:actualizarPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="actualizarPoliza">
+    <wsdl:part name="parameters" element="tns:actualizarPoliza" />
+  </wsdl:message>
+  <wsdl:message name="modificarProveedorResponse">
+    <wsdl:part name="parameters" element="tns:modificarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerPolizasResponse">
+    <wsdl:part name="parameters" element="tns:obtenerPolizasResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerProveedores">
+    <wsdl:part name="parameters" element="tns:obtenerProveedores" />
+  </wsdl:message>
+  <wsdl:message name="obtenerPoliza">
+    <wsdl:part name="parameters" element="tns:obtenerPoliza" />
+  </wsdl:message>
+  <wsdl:message name="obtenerPolizas">
+    <wsdl:part name="parameters" element="tns:obtenerPolizas" />
+  </wsdl:message>
+  <wsdl:message name="crearPoliza">
+    <wsdl:part name="parameters" element="tns:crearPoliza" />
+  </wsdl:message>
+  <wsdl:message name="crearPolizaResponse">
+    <wsdl:part name="parameters" element="tns:crearPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="agregarProveedorResponse">
+    <wsdl:part name="parameters" element="tns:agregarProveedorResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerPolizaResponse">
+    <wsdl:part name="parameters" element="tns:obtenerPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerBoletasPolizaResponse">
+    <wsdl:part name="parameters" element="tns:obtenerBoletasPolizaResponse" />
+  </wsdl:message>
+  <wsdl:message name="obtenerBoletasPoliza">
+    <wsdl:part name="parameters" element="tns:obtenerBoletasPoliza" />
+  </wsdl:message>
+  <wsdl:message name="agregarProveedor">
+    <wsdl:part name="parameters" element="tns:agregarProveedor" />
+  </wsdl:message>
+  <wsdl:message name="obtenerProveedorResponse">
+    <wsdl:part name="parameters" element="tns:obtenerProveedorResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioAseguradora">
+    <wsdl:operation name="obtenerPoliza">
+      <wsdl:input name="obtenerPoliza" message="tns:obtenerPoliza" />
+      <wsdl:output name="obtenerPolizaResponse" message="tns:obtenerPolizaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPolizas">
+      <wsdl:input name="obtenerPolizas" message="tns:obtenerPolizas" />
+      <wsdl:output name="obtenerPolizasResponse" message="tns:obtenerPolizasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="modificarProveedor">
+      <wsdl:input name="modificarProveedor" message="tns:modificarProveedor" />
+      <wsdl:output name="modificarProveedorResponse" message="tns:modificarProveedorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="pagarBoleta">
+      <wsdl:input name="pagarBoleta" message="tns:pagarBoleta" />
+      <wsdl:output name="pagarBoletaResponse" message="tns:pagarBoletaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="crearPoliza">
+      <wsdl:input name="crearPoliza" message="tns:crearPoliza" />
+      <wsdl:output name="crearPolizaResponse" message="tns:crearPolizaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerProveedor">
+      <wsdl:input name="obtenerProveedor" message="tns:obtenerProveedor" />
+      <wsdl:output name="obtenerProveedorResponse" message="tns:obtenerProveedorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerBoletasPoliza">
+      <wsdl:input name="obtenerBoletasPoliza" message="tns:obtenerBoletasPoliza" />
+      <wsdl:output name="obtenerBoletasPolizaResponse" message="tns:obtenerBoletasPolizaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="agregarProveedor">
+      <wsdl:input name="agregarProveedor" message="tns:agregarProveedor" />
+      <wsdl:output name="agregarProveedorResponse" message="tns:agregarProveedorResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="actualizarPoliza">
+      <wsdl:input name="actualizarPoliza" message="tns:actualizarPoliza" />
+      <wsdl:output name="actualizarPolizaResponse" message="tns:actualizarPolizaResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="obtenerProveedores">
+      <wsdl:input name="obtenerProveedores" message="tns:obtenerProveedores" />
+      <wsdl:output name="obtenerProveedoresResponse" message="tns:obtenerProveedoresResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioAseguradoraServiceSoapBinding" type="tns:ServicioAseguradora">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="obtenerPoliza">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerPoliza">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerPolizaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerPolizas">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerPolizas">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerPolizasResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarProveedor">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="modificarProveedor">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="modificarProveedorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pagarBoleta">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="pagarBoleta">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="pagarBoletaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearPoliza">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="crearPoliza">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="crearPolizaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerProveedor">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerProveedor">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerProveedorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerBoletasPoliza">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerBoletasPoliza">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerBoletasPolizaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="agregarProveedor">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="agregarProveedor">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="agregarProveedorResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarPoliza">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="actualizarPoliza">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="actualizarPolizaResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="obtenerProveedores">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="obtenerProveedores">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="obtenerProveedoresResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioAseguradoraService">
+    <wsdl:port name="ServicioAseguradoraPort" binding="tns:ServicioAseguradoraServiceSoapBinding">
+      <soap:address location="http://localhost:8080/webservices/ServicioAseguradora" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

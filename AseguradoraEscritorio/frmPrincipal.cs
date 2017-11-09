@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace AseguradoraEscritorio
 {
-    public partial class Form1 : Form
+    public partial class frmPrincipal : Form
     {
-        public Form1()
+        public frmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void listadoPolizasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPolizas formaPolizas = new frmPolizas();
+            formaPolizas.Show();
         }
     }
 }
