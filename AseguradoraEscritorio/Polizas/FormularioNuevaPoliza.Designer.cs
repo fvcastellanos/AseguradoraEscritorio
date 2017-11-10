@@ -1,6 +1,6 @@
-﻿namespace AseguradoraEscritorio
+﻿namespace AseguradoraEscritorio.Polizas
 {
-    partial class frmNuevaPoliza
+    partial class FormularioNuevaPoliza
     {
         /// <summary>
         /// Required designer variable.
@@ -229,6 +229,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGuardar.Location = new System.Drawing.Point(15, 392);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(108, 36);
@@ -248,7 +249,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmNuevaPoliza
+            // FormularioNuevaPoliza
             // 
             this.AcceptButton = this.btnGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,7 +277,7 @@
             this.Controls.Add(this.edNoPoliza);
             this.Controls.Add(this.label1);
             this.MaximizeBox = false;
-            this.Name = "frmNuevaPoliza";
+            this.Name = "FormularioNuevaPoliza";
             this.Text = "Nueva Poliza";
             ((System.ComponentModel.ISupportInitialize)(this.edNoPagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edMonto)).EndInit();

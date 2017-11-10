@@ -18,10 +18,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:8080/webservices/ServicioAseguradora?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:8080/aseguradora/webservices/ServicioAseguradora?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServicioAseguradoraService.wsdl" MetadataType="Wsdl" ID="b54d629c-3ec0-4aec-9849-4fe5b4fd9711" SourceId="1" SourceUrl="http://localhost:8080/webservices/ServicioAseguradora?wsdl" />
+    <MetadataFile FileName="ServicioAseguradoraService1.wsdl" MetadataType="Wsdl" ID="e5d0929b-cd5c-4cd0-ad47-fe443603fabd" SourceId="1" SourceUrl="http://localhost:8080/aseguradora/webservices/ServicioAseguradora?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -47,48 +47,75 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Boletas\FormularioBoletas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Boletas\FormularioBoletas.Designer.cs">
+      <DependentUpon>FormularioBoletas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServicioWebAseguradora\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="frmModificarPoliza.cs">
+    <Compile Include="Polizas\FormularioModificarPoliza.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmModificarPoliza.Designer.cs">
-      <DependentUpon>frmModificarPoliza.cs</DependentUpon>
+    <Compile Include="Polizas\FormularioModificarPoliza.Designer.cs">
+      <DependentUpon>FormularioModificarPoliza.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmNuevaPoliza.cs">
+    <Compile Include="Polizas\FormularioNuevaPoliza.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmNuevaPoliza.Designer.cs">
-      <DependentUpon>frmNuevaPoliza.cs</DependentUpon>
+    <Compile Include="Polizas\FormularioNuevaPoliza.Designer.cs">
+      <DependentUpon>FormularioNuevaPoliza.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPolizas.cs">
+    <Compile Include="Polizas\FormularioPolizas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPolizas.Designer.cs">
-      <DependentUpon>frmPolizas.cs</DependentUpon>
+    <Compile Include="Polizas\FormularioPolizas.Designer.cs">
+      <DependentUpon>FormularioPolizas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrincipal.cs">
+    <Compile Include="FormularioPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.cs">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <Compile Include="FormularioPrincipal.Designer.cs">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmModificarPoliza.resx">
-      <DependentUpon>frmModificarPoliza.cs</DependentUpon>
+    <Compile Include="Proveedores\FormularioAgregarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FormularioAgregarProveedor.Designer.cs">
+      <DependentUpon>FormularioAgregarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores\FormularioModificarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FormularioModificarProveedor.Designer.cs">
+      <DependentUpon>FormularioModificarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Proveedores\FormularioProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Proveedores\FormularioProveedores.Designer.cs">
+      <DependentUpon>FormularioProveedores.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Boletas\FormularioBoletas.resx">
+      <DependentUpon>FormularioBoletas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmNuevaPoliza.resx">
-      <DependentUpon>frmNuevaPoliza.cs</DependentUpon>
+    <EmbeddedResource Include="Polizas\FormularioModificarPoliza.resx">
+      <DependentUpon>FormularioModificarPoliza.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPolizas.resx">
-      <DependentUpon>frmPolizas.cs</DependentUpon>
+    <EmbeddedResource Include="Polizas\FormularioNuevaPoliza.resx">
+      <DependentUpon>FormularioNuevaPoliza.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
-      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    <EmbeddedResource Include="Polizas\FormularioPolizas.resx">
+      <DependentUpon>FormularioPolizas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +126,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Proveedores\FormularioAgregarProveedor.resx">
+      <DependentUpon>FormularioAgregarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\FormularioModificarProveedor.resx">
+      <DependentUpon>FormularioModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\FormularioProveedores.resx">
+      <DependentUpon>FormularioProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Connected Services\ServicioWebAseguradora\AseguradoraEscritorio.ServicioWebAseguradora.respuestaBoleta.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -117,7 +153,7 @@
     <None Include="Connected Services\ServicioWebAseguradora\AseguradoraEscritorio.ServicioWebAseguradora.respuestaProveedor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServicioWebAseguradora\ServicioAseguradoraService.wsdl" />
+    <None Include="Connected Services\ServicioWebAseguradora\ServicioAseguradoraService1.wsdl" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AseguradoraEscritorio.ServicioWebAseguradora;
 
-namespace AseguradoraEscritorio
+namespace AseguradoraEscritorio.Polizas
 {
-    public partial class frmNuevaPoliza : Form
+    public partial class FormularioNuevaPoliza : Form
     {
-        public frmNuevaPoliza()
+        public FormularioNuevaPoliza()
         {
             InitializeComponent();
         }

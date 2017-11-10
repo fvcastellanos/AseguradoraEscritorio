@@ -1,6 +1,6 @@
-﻿namespace AseguradoraEscritorio
+﻿namespace AseguradoraEscritorio.Polizas
 {
-    partial class frmModificarPoliza
+    partial class FormularioModificarPoliza
     {
         /// <summary>
         /// Required designer variable.
@@ -70,6 +70,7 @@
             // 
             // btnGuardar
             // 
+            this.btnGuardar.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnGuardar.Location = new System.Drawing.Point(18, 447);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(108, 36);
@@ -294,7 +295,7 @@
             this.label10.TabIndex = 133;
             this.label10.Text = "Activo";
             // 
-            // frmModificarPoliza
+            // FormularioModificarPoliza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -320,8 +321,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.edNombres);
             this.Controls.Add(this.label2);
-            this.Name = "frmModificarPoliza";
-            this.Text = "frmModificarPoliza";
+            this.Name = "FormularioModificarPoliza";
+            this.Text = "FormularioModificarPoliza";
             ((System.ComponentModel.ISupportInitialize)(this.edMonto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.edNoPagos)).EndInit();
             this.panel1.ResumeLayout(false);

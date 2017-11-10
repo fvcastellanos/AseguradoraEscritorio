@@ -1,21 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using AseguradoraEscritorio.ServicioWebAseguradora;
 
-namespace AseguradoraEscritorio
+namespace AseguradoraEscritorio.Polizas
 {
-    public partial class frmPolizas : Form
+    public partial class FormularioPolizas : Form
     {
-
-
-        public frmPolizas()
+        public FormularioPolizas()
         {
             InitializeComponent();
         }
@@ -24,7 +16,7 @@ namespace AseguradoraEscritorio
         {
         }
 
-        private void cargarPolizas()
+        private void CargarPolizas()
         {
             var cliente = new ServicioAseguradoraClient();
 
@@ -39,30 +31,41 @@ namespace AseguradoraEscritorio
                 return;
             }
 
-            foreach (var p in respuesta.polizas)
+            var polizasOrdenadas =
+                from d in respuesta.polizas
+                orderby d.id
+                select d;
+
+            foreach (var p in polizasOrdenadas)
                 polizasBindingSource.List.Add(p);
         }
 
         private void refrescarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            cargarPolizas();
+            CargarPolizas();
         }
 
         private void frmPolizas_Shown(object sender, EventArgs e)
         {
-            cargarPolizas();
+            CargarPolizas();
         }
 
         private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var nuevaPoliza = new frmNuevaPoliza();
-            nuevaPoliza.Show();
+            var nuevaPoliza = new FormularioNuevaPoliza();
+            var result = nuevaPoliza.ShowDialog();
+
+            if (result.Equals(DialogResult.OK))
+                CargarPolizas();
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var modificarPoliza = new frmModificarPoliza();
-            modificarPoliza.Show();
+            var modificarPoliza = new FormularioModificarPoliza();
+            var result = modificarPoliza.ShowDialog();
+
+            if (result.Equals(DialogResult.OK))
+                CargarPolizas();
         }
     }
 }
