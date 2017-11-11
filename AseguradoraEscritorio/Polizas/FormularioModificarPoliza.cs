@@ -7,6 +7,7 @@ namespace AseguradoraEscritorio.Polizas
     public partial class FormularioModificarPoliza : Form
     {
         private poliza _poliza;
+        private readonly string _noPoliza;
         private readonly ServicioAseguradoraClient _cliente = new ServicioAseguradoraClient();
 
 
@@ -15,22 +16,15 @@ namespace AseguradoraEscritorio.Polizas
             InitializeComponent();
         }
 
-        private void btnBuscar_Click(object sender, EventArgs e)
+        public FormularioModificarPoliza(string noPoliza)
         {
-            var respuesta = _cliente.obtenerPoliza(edNoPoliza.Text);
-
-            if (respuesta.estado.Equals("ERROR"))
-            {
-                MessageBox.Show(respuesta.mensaje);
-
-                return;
-            }
-
-            CargarPoliza(respuesta.poliza);
+            InitializeComponent();
+            _noPoliza = noPoliza;
         }
 
         private void CargarPoliza(poliza poliza)
         {
+            EtiquetaNoPoliza.Text = "No. Poliza -> " + poliza.noPoliza;
             edNombres.Text = poliza.nombres;
             edApellidos.Text = poliza.apellidos;
             edTelefono.Text = poliza.telefono;
@@ -60,7 +54,7 @@ namespace AseguradoraEscritorio.Polizas
                 return;
             }
 
-            btnBuscar_Click(sender, e);
+            Close();
         }
 
         private respuestaPoliza ModificarPoliza()
@@ -79,6 +73,21 @@ namespace AseguradoraEscritorio.Polizas
             _poliza.activa = cbActivo.Text.Equals("S") ? 1 : 0;
 
             return _cliente.actualizarPoliza(_poliza);
+        }
+
+        private void FormularioModificarPoliza_Shown(object sender, EventArgs e)
+        {
+            var respuesta = _cliente.obtenerPoliza(_noPoliza);
+
+            if (respuesta.estado.Equals("ERROR"))
+            {
+                MessageBox.Show(respuesta.mensaje);
+
+                return;
+            }
+
+            CargarPoliza(respuesta.poliza);
+
         }
     }
 }

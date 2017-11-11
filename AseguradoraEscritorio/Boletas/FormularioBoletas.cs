@@ -8,11 +8,19 @@ namespace AseguradoraEscritorio.Boletas
     public partial class FormularioBoletas : Form
     {
         private readonly ServicioAseguradoraClient _cliente;
+        private readonly string _noPoliza;
 
         public FormularioBoletas()
         {
             InitializeComponent();
             _cliente = new ServicioAseguradoraClient();
+        }
+
+        public FormularioBoletas(string noPoliza)
+        {
+            InitializeComponent();
+            _cliente = new ServicioAseguradoraClient();
+            _noPoliza = noPoliza;
         }
 
         private void CargarBoletas(string poliza)
@@ -54,13 +62,6 @@ namespace AseguradoraEscritorio.Boletas
             LabelEstado.Text = "Estado: " + (p.activa == 1 ? "Activa" : "Inactiva");
         }
 
-        private void BotonBuscar_Click(object sender, EventArgs e)
-        {
-            var poliza = NoPolizaTexto.Text;
-
-            CargarBoletas(poliza);
-        }
-
         private void pagarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var boleta = (boleta) respuestaListadoBoletasBindingSource.Current;
@@ -80,6 +81,11 @@ namespace AseguradoraEscritorio.Boletas
             }
 
             CargarBoletas(boleta.poliza.noPoliza);
+        }
+
+        private void FormularioBoletas_Shown(object sender, EventArgs e)
+        {
+            CargarBoletas(_noPoliza);
         }
     }
 }

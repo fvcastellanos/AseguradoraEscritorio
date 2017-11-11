@@ -31,7 +31,6 @@
             this.mnuPrincipal = new System.Windows.Forms.MenuStrip();
             this.polizasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.boletasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrincipal.SuspendLayout();
             this.SuspendLayout();
@@ -42,7 +41,6 @@
             this.mnuPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.polizasToolStripMenuItem,
             this.proveedoresToolStripMenuItem,
-            this.boletasToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.mnuPrincipal.Location = new System.Drawing.Point(0, 0);
             this.mnuPrincipal.Name = "mnuPrincipal";
@@ -63,13 +61,6 @@
             this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(103, 24);
             this.proveedoresToolStripMenuItem.Text = "Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
-            // 
-            // boletasToolStripMenuItem
-            // 
-            this.boletasToolStripMenuItem.Name = "boletasToolStripMenuItem";
-            this.boletasToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
-            this.boletasToolStripMenuItem.Text = "Boletas";
-            this.boletasToolStripMenuItem.Click += new System.EventHandler(this.boletasToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -99,7 +90,6 @@
         private System.Windows.Forms.MenuStrip mnuPrincipal;
         private System.Windows.Forms.ToolStripMenuItem polizasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem boletasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
     }
 }

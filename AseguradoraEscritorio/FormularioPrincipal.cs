@@ -31,12 +31,6 @@ namespace AseguradoraEscritorio
             formaPolizas.Show();
         }
 
-        private void boletasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formulario = new FormularioBoletas();
-            formulario.Show();
-        }
-
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formulario = new FormularioProveedores();

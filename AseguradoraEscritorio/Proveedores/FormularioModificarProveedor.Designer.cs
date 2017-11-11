@@ -55,6 +55,7 @@
             this.BotonGuardar.TabIndex = 10;
             this.BotonGuardar.Text = "Guardar";
             this.BotonGuardar.UseVisualStyleBackColor = true;
+            this.BotonGuardar.Click += new System.EventHandler(this.BotonGuardar_Click);
             // 
             // TextoNombre
             // 
@@ -101,6 +102,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormularioModificarProveedor";
             this.Text = "Modificar Proveedor";
+            this.Shown += new System.EventHandler(this.FormularioModificarProveedor_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

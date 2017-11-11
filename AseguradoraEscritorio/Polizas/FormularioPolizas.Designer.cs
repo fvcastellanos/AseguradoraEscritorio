@@ -45,6 +45,7 @@
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.polizasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.boletasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgPolizas)).BeginInit();
             this.ctxPolizas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.polizasBindingSource)).BeginInit();
@@ -154,28 +155,29 @@
             this.ctxPolizas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refrescarToolStripMenuItem,
             this.nuevoToolStripMenuItem,
-            this.modificarToolStripMenuItem});
+            this.modificarToolStripMenuItem,
+            this.boletasToolStripMenuItem});
             this.ctxPolizas.Name = "ctxPolizas";
-            this.ctxPolizas.Size = new System.Drawing.Size(143, 76);
+            this.ctxPolizas.Size = new System.Drawing.Size(176, 128);
             // 
             // refrescarToolStripMenuItem
             // 
             this.refrescarToolStripMenuItem.Name = "refrescarToolStripMenuItem";
-            this.refrescarToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.refrescarToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.refrescarToolStripMenuItem.Text = "Refrescar";
             this.refrescarToolStripMenuItem.Click += new System.EventHandler(this.refrescarToolStripMenuItem_Click);
             // 
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
-            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             this.nuevoToolStripMenuItem.Click += new System.EventHandler(this.nuevoToolStripMenuItem_Click);
             // 
             // modificarToolStripMenuItem
             // 
             this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
             this.modificarToolStripMenuItem.Text = "Modificar";
             this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
@@ -183,6 +185,13 @@
             // 
             this.polizasBindingSource.DataMember = "polizas";
             this.polizasBindingSource.DataSource = typeof(AseguradoraEscritorio.ServicioWebAseguradora.respuestaListadoPolizas);
+            // 
+            // boletasToolStripMenuItem
+            // 
+            this.boletasToolStripMenuItem.Name = "boletasToolStripMenuItem";
+            this.boletasToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.boletasToolStripMenuItem.Text = "Boletas";
+            this.boletasToolStripMenuItem.Click += new System.EventHandler(this.boletasToolStripMenuItem_Click);
             // 
             // FormularioPolizas
             // 
@@ -217,5 +226,6 @@
         private System.Windows.Forms.ToolStripMenuItem refrescarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem boletasToolStripMenuItem;
     }
 }

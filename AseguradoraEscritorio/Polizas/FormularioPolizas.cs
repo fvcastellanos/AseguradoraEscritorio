@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using AseguradoraEscritorio.Boletas;
 using AseguradoraEscritorio.ServicioWebAseguradora;
 
 namespace AseguradoraEscritorio.Polizas
@@ -61,11 +62,19 @@ namespace AseguradoraEscritorio.Polizas
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var modificarPoliza = new FormularioModificarPoliza();
+            var p = (poliza) polizasBindingSource.Current;
+            var modificarPoliza = new FormularioModificarPoliza(p.noPoliza);
             var result = modificarPoliza.ShowDialog();
 
             if (result.Equals(DialogResult.OK))
                 CargarPolizas();
+        }
+
+        private void boletasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var p = (poliza)polizasBindingSource.Current;
+            var formulario = new FormularioBoletas(p.noPoliza);
+            formulario.ShowDialog();
         }
     }
 }

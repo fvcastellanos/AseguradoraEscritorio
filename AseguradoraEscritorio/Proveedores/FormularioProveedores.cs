@@ -56,6 +56,16 @@ namespace AseguradoraEscritorio.Proveedores
             if (resultado.Equals(DialogResult.OK))
                 CargarProveedores();
         }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var p = (proveedor) respuestaListadoProveedoresBindingSource.Current;
+            var formulario = new FormularioModificarProveedor(p.nit);
+            var resultado = formulario.ShowDialog();
+
+            if (resultado.Equals(DialogResult.OK))
+                CargarProveedores();
+        }
     }
 
 }

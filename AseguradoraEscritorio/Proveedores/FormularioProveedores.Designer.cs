@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.TablaProveedores = new System.Windows.Forms.DataGridView();
+            this.nitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CtxOpciones = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refrescarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.respuestaListadoProveedoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TablaProveedores)).BeginInit();
             this.CtxOpciones.SuspendLayout();
@@ -61,36 +61,6 @@
             this.TablaProveedores.Size = new System.Drawing.Size(765, 417);
             this.TablaProveedores.TabIndex = 0;
             // 
-            // CtxOpciones
-            // 
-            this.CtxOpciones.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.CtxOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.refrescarToolStripMenuItem,
-            this.agregarToolStripMenuItem,
-            this.modificarToolStripMenuItem});
-            this.CtxOpciones.Name = "CtxOpciones";
-            this.CtxOpciones.Size = new System.Drawing.Size(143, 76);
-            // 
-            // refrescarToolStripMenuItem
-            // 
-            this.refrescarToolStripMenuItem.Name = "refrescarToolStripMenuItem";
-            this.refrescarToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.refrescarToolStripMenuItem.Text = "Refrescar";
-            this.refrescarToolStripMenuItem.Click += new System.EventHandler(this.refrescarToolStripMenuItem_Click);
-            // 
-            // agregarToolStripMenuItem
-            // 
-            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.agregarToolStripMenuItem.Text = "Agregar";
-            this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(142, 24);
-            this.modificarToolStripMenuItem.Text = "Modificar";
-            // 
             // nitDataGridViewTextBoxColumn
             // 
             this.nitDataGridViewTextBoxColumn.DataPropertyName = "nit";
@@ -106,6 +76,37 @@
             this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
             this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // CtxOpciones
+            // 
+            this.CtxOpciones.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.CtxOpciones.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refrescarToolStripMenuItem,
+            this.agregarToolStripMenuItem,
+            this.modificarToolStripMenuItem});
+            this.CtxOpciones.Name = "CtxOpciones";
+            this.CtxOpciones.Size = new System.Drawing.Size(176, 104);
+            // 
+            // refrescarToolStripMenuItem
+            // 
+            this.refrescarToolStripMenuItem.Name = "refrescarToolStripMenuItem";
+            this.refrescarToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.refrescarToolStripMenuItem.Text = "Refrescar";
+            this.refrescarToolStripMenuItem.Click += new System.EventHandler(this.refrescarToolStripMenuItem_Click);
+            // 
+            // agregarToolStripMenuItem
+            // 
+            this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.agregarToolStripMenuItem.Text = "Agregar";
+            this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
+            // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(175, 24);
+            this.modificarToolStripMenuItem.Text = "Modificar";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
             // 
             // respuestaListadoProveedoresBindingSource
             // 

@@ -121,6 +121,8 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         
         private string apellidosField;
         
+        private consultaCobertura[] consultaCoberturasField;
+        
         private System.DateTime fechaEmisionField;
         
         private bool fechaEmisionFieldSpecified;
@@ -170,7 +172,19 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute("consultaCoberturas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public consultaCobertura[] consultaCoberturas {
+            get {
+                return this.consultaCoberturasField;
+            }
+            set {
+                this.consultaCoberturasField = value;
+                this.RaisePropertyChanged("consultaCoberturas");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public System.DateTime fechaEmision {
             get {
                 return this.fechaEmisionField;
@@ -194,7 +208,7 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public System.DateTime fechaNacimiento {
             get {
                 return this.fechaNacimientoField;
@@ -218,7 +232,7 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public System.DateTime fechaVencimiento {
             get {
                 return this.fechaVencimientoField;
@@ -242,7 +256,7 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public int id {
             get {
                 return this.idField;
@@ -254,7 +268,7 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
         public double monto {
             get {
                 return this.montoField;
@@ -266,7 +280,7 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public int noPagos {
             get {
                 return this.noPagosField;
@@ -278,7 +292,7 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public string noPoliza {
             get {
                 return this.noPolizaField;
@@ -290,7 +304,7 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public string nombres {
             get {
                 return this.nombresField;
@@ -302,7 +316,7 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public string telefono {
             get {
                 return this.telefonoField;
@@ -310,6 +324,108 @@ namespace AseguradoraEscritorio.ServicioWebAseguradora {
             set {
                 this.telefonoField = value;
                 this.RaisePropertyChanged("telefono");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.7.2102.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://sw.dw.umg.edu/")]
+    public partial class consultaCobertura : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string autorizacionField;
+        
+        private System.DateTime fechaConsultaField;
+        
+        private bool fechaConsultaFieldSpecified;
+        
+        private int idField;
+        
+        private string nitProveedorField;
+        
+        private poliza polizaField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string autorizacion {
+            get {
+                return this.autorizacionField;
+            }
+            set {
+                this.autorizacionField = value;
+                this.RaisePropertyChanged("autorizacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public System.DateTime fechaConsulta {
+            get {
+                return this.fechaConsultaField;
+            }
+            set {
+                this.fechaConsultaField = value;
+                this.RaisePropertyChanged("fechaConsulta");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fechaConsultaSpecified {
+            get {
+                return this.fechaConsultaFieldSpecified;
+            }
+            set {
+                this.fechaConsultaFieldSpecified = value;
+                this.RaisePropertyChanged("fechaConsultaSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+                this.RaisePropertyChanged("id");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string nitProveedor {
+            get {
+                return this.nitProveedorField;
+            }
+            set {
+                this.nitProveedorField = value;
+                this.RaisePropertyChanged("nitProveedor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public poliza poliza {
+            get {
+                return this.polizaField;
+            }
+            set {
+                this.polizaField = value;
+                this.RaisePropertyChanged("poliza");
             }
         }
         
